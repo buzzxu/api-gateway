@@ -11,7 +11,7 @@ RUN apt-get update && \
 
 
 RUN cd && \
-    cd $GOPATH/src/api-gateway && \
+    cd $GOPATH/src/api-gateway/cmd/app && \
     go build -o app; \
     mv app  /opt/app;
 
