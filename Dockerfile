@@ -1,7 +1,7 @@
 FROM golang:bullseye as build
 
-WORKDIR $GOPATH/src/shy2you
-ADD . $GOPATH/src/shy2you
+WORKDIR $GOPATH/src/api-gateway
+ADD . $GOPATH/src/api-gateway
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.io
 
@@ -11,7 +11,7 @@ RUN apt-get update && \
 
 
 RUN cd && \
-    cd $GOPATH/src/shy2you && \
+    cd $GOPATH/src/api-gateway && \
     go build -o app; \
     mv app  /opt/app;
 
