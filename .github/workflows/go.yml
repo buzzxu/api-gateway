@@ -43,7 +43,7 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            buzzxu/${{ IMAGE_NAME }}:latest
-            buzzxu/${{ IMAGE_NAME }}:${{ VERSION }}
-            ghcr.io/buzzxu/${{ IMAGE_NAME }}:latest
-            ghcr.io/buzzxu/${{ IMAGE_NAME }}:${{ VERSION }}
+            buzzxu/$IMAGE_NAME:latest
+            buzzxu/$IMAGE_NAME:$VERSION
+            ghcr.io/buzzxu/$IMAGE_NAME:latest
+            ghcr.io/buzzxu/$IMAGE_NAME:$VERSION
