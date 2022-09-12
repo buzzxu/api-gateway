@@ -1,0 +1,19 @@
+v: 21.1
+services:
+  orderService:
+    protocol: http
+    host: 127.0.0.1
+    port: 8080
+    auth:
+      type: JWT
+      token: fdfdfdfdfdf
+    description: 订单服务
+    methods:
+      getAll:
+        url: /order/getAll
+        method: GET
+        limit: 1000
+      create:
+        url: /order/create
+        method: POST
+

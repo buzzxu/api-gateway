@@ -1,0 +1,21 @@
+apps:
+  test:
+    name: 测试客户端
+    expired: 2023-10-01
+    appKey: xxxxxxxx
+    appSecret: xxxx
+    permit:
+      scope: "*"
+  kujiale:
+    name: 酷家乐
+    expired: 2023-10-01
+    appKey: xxxxxxxx
+    appSecret: xxxx
+    permit:
+      scope: service
+      services:
+        orderService:
+          allow:
+            - find
+          deny:
+            - create
