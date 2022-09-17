@@ -19,13 +19,11 @@ type (
 	}
 
 	App struct {
-		Name      string  `yaml:"name"`
-		AppKey    string  `yaml:"appKey"`
-		AppSecret string  `yaml:"appSecret"`
-		Expired   string  `yaml:"expired"`
-		Permit    *Permit `yaml:"permit"`
+		Name    string  `yaml:"name"`
+		Auth    *Auth   `yaml:"auth"`
+		Expired string  `yaml:"expired"`
+		Permit  *Permit `yaml:"permit"`
 	}
-
 	Permit struct {
 		Scope    string `yaml:"scope,omitempty"`
 		Services map[string]*struct {
@@ -44,12 +42,14 @@ type (
 		Host        string            `yaml:"host"`
 		Port        int               `yaml:"port"`
 		Description string            `yaml:"description"`
-		Auth        Auth              `yaml:"auth"`
+		Auth        *Auth             `yaml:"auth"`
 		Methods     map[string]Method `yaml:"methods"`
 	}
 	Auth struct {
-		Type  string `yaml:"type"`
-		Token string `yaml:"token"`
+		Type      string `yaml:"type"`
+		Token     string `yaml:"token,omitempty"`
+		AppKey    string `yaml:"appKey,omitempty"`
+		AppSecret string `yaml:"appSecret,omitempty"`
 	}
 
 	Method struct {
