@@ -5,17 +5,17 @@ import (
 	"fmt"
 )
 
-type DefPermission struct {
+type Permission struct {
 	permit *configs.Permit
 }
 
 // Set 设置权限
-func (p DefPermission) Set(permit *configs.Permit) {
+func (p *Permission) Set(permit *configs.Permit) {
 	p.permit = permit
 }
 
 // Verify 权限匹配
-func (p DefPermission) Verify(serviceName, method string) *Error {
+func (p *Permission) Verify(serviceName, method string) *Error {
 	if p.permit.Scope == "*" {
 		//如果作用域是 *
 		return nil

@@ -13,7 +13,8 @@ import (
 func main() {
 	runtime.GOMAXPROCS(conf.ServerConf.MaxProc)
 	flag.Parse()
-	conf.LoadDefaultConf()
+	// 关闭redis
+	defer ironman.Redis.Close()
 	logger.InitLogger()
 	ironman.Server(router.New())
 	flag.Usage = usage

@@ -3,7 +3,7 @@ module api-gateway
 go 1.19
 
 require (
-	github.com/buzzxu/boys v0.0.0-20220916043129-36b991d1cfae
+	github.com/buzzxu/boys v0.0.0-20221004083047-f76d39c739e1
 	github.com/buzzxu/ironman v0.2.8
 	github.com/labstack/echo/v4 v4.9.0
 	gopkg.in/yaml.v2 v2.4.0

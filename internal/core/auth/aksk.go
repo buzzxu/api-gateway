@@ -28,9 +28,13 @@ func (s *AkSkAuthenticate) Verify(appkey, content, sign string) *core.Error {
 	if app, ok := s.apps[appkey]; ok {
 		err := aksk.Verify(content, sign, app.AppSecret)
 		if err != nil {
-			return core.NewError("1006", err.Error())
+			return core.NewError("1007", err.Error())
 		}
 		return nil
 	}
 	return core.NewError("1006", fmt.Sprintf("appId: %s 不存在", appkey))
+}
+
+func (s AkSkAuthenticate) Get(appkey string) *configs.Auth {
+	return s.apps[appkey]
 }
