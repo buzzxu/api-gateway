@@ -1,4 +1,4 @@
-FROM golang:bullseye as build
+FROM golang:1.27.3-bullseye as build
 
 WORKDIR $GOPATH/src/api-gateway
 ADD . $GOPATH/src/api-gateway
